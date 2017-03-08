@@ -13,3 +13,18 @@
  *= require_tree .
  *= require_self
  */
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+
+ body {
+   font-family: 'Patrick Hand SC', cursive;
+   background-color: #C0C0C0;
+ }
+
+ .user-creds {
+   display: inline-block;
+   text-align: right;
+   float: right;
+   margin-right: 5px;
+   position: relative;
+ }
