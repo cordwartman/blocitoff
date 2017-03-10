@@ -1,5 +1,12 @@
 <div class="background">
   <h1 class="welcome-header">Profile</h1>
-  <h2 class="user-email"><%= current_user.email %></h2>
-  <h3 class="welcome-desc">********************************</h3>
+  <h2 class="user-email"><%= @user.email %></h2>
+  <h3>
+    <% if @user.id == current_user.id %>
+      <%= render 'items/form', item: Item.new, user: @user %>
+    <% end %>
+  </h3>
+  <h3 class="todo-list">
+    <%= render partial: 'items/item', locals: { items: @items } %>
+  </h3>
 </div>
