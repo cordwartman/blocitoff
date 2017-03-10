@@ -1,0 +1,13 @@
+<div class"media">
+  <div class="media-body">
+    <% if items.empty? %>
+      <span>You have nothing to do!</span>
+    <% else %>
+      <% items.each do |i| %>
+        <% if i.user_id == @user.id %>
+          <%= i.name %></br>
+        <% end %>
+      <% end %>
+    <% end %>
+  </div>
+</div>
