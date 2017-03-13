@@ -1,4 +1,5 @@
 class ItemsController < ApplicationController
+
   def new
     @item = Item.new
   end
@@ -16,6 +17,14 @@ class ItemsController < ApplicationController
     end
   end
 
+  def destroy
+    @item = Item.destroy(params[:id])
+
+    respond_to do |f|
+      f.html { redirect_to user_path(current_user.id) }
+      f.js
+    end
+  end
 
   private
 

@@ -14,3 +14,50 @@
   width: 50%;
   margin: 0 auto;
 }
+
+.item-table {
+  text-align: center;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.todo-item {
+  text-align: right;
+  white-space: nowrap;
+  display: inline-block;
+  width: auto;
+}
+
+ .todo-comp {
+   text-align: left;
+   padding-right: 5px;
+   white-space: nowrap;
+   display: inline-block;
+}
+
+@media only screen and (max-width: 768px) {
+  .todo-list {
+    width: 100%;
+    margin: 0;
+  }
+
+  .item-table {
+    text-align: left;
+    width: 90%;
+    margin: 0 auto;
+    white-space: normal;
+  }
+
+  .todo-entry {
+    width: 90%;
+  }
+
+  .todo-item {
+    white-space: normal;
+    word-wrap: normal;
+  }
+
+  .todo-comp {
+    white-space: nowrap;
+  }
+}
