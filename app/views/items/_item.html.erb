@@ -3,11 +3,22 @@
     <% if items.empty? %>
       <span>You have nothing to do!</span>
     <% else %>
-      <% items.each do |i| %>
-        <% if i.user_id == @user.id %>
-          <%= i.name %></br>
+      <div class="item-table">
+        <% items.each do |i| %>
+          <% if i.user_id == @user.id %>
+            <%= div_for i do %>
+              <% if @user.id == current_user.id %>
+                <div class="todo-comp">
+                  <%= link_to "", user_item_path(user_id: @user.id, id: i.id), method: :delete, class: 'glyphicon glyphicon-ok', remote: true %>
+                </div>
+              <% end %>
+              <div class="todo-item">
+                <%= i.name %>
+              </div>
+            <% end %>
+          <% end %>
         <% end %>
-      <% end %>
+      </table>
     <% end %>
   </div>
 </div>
