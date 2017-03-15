@@ -2,7 +2,7 @@
   Add an Item:
   <%= form_for [user, item] do |f| %>
     <div class="form-group">
-      <%= f.text_field :name, class: 'form-control', placeholder: "Enter todo item" %>
+      <%= f.text_field :name, class: 'form-control', placeholder: "Enter todo item", autofocus: true %>
     </div>
     <%= f.submit "Save", class: 'btn btn-success' %>
   <% end %>
