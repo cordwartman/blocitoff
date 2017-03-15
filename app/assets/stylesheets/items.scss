@@ -21,20 +21,28 @@
   margin: 0 auto;
 }
 
+.todo-row {
+  padding-bottom: 7px;
+}
+
 .todo-item {
-  text-align: right;
+  text-align: center;
   white-space: nowrap;
-  display: inline-block;
-  width: auto;
+  width: 70%;
 }
 
  .todo-comp {
-   text-align: left;
+   text-align: center;
    padding-right: 5px;
    white-space: nowrap;
-   display: inline-block;
+   width: 28px;
 }
 
+.todo-time {
+  text-align: right;
+  white-space: nowrap;
+  width: 25%;
+}
 @media only screen and (max-width: 768px) {
   .todo-list {
     width: 100%;
@@ -52,6 +60,10 @@
     width: 90%;
   }
 
+  .todo-row {
+    padding-bottom: 15px;
+  }
+
   .todo-item {
     white-space: normal;
     word-wrap: normal;
@@ -59,5 +71,9 @@
 
   .todo-comp {
     white-space: nowrap;
+  }
+
+  .todo-time {
+    white-space: normal;
   }
 }

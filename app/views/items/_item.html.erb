@@ -3,18 +3,21 @@
     <% if items.empty? %>
       <span>You have nothing to do!</span>
     <% else %>
-      <div class="item-table">
+      <table class="item-table">
         <% items.each do |i| %>
           <% if i.user_id == @user.id %>
-            <%= div_for i do %>
+            <%= content_tag_for(:tr, i, class: "todo-row") do %>
               <% if @user.id == current_user.id %>
-                <div class="todo-comp">
+                <td class="todo-comp">
                   <%= link_to "", user_item_path(user_id: @user.id, id: i.id), method: :delete, class: 'glyphicon glyphicon-ok', remote: true %>
-                </div>
+                </td>
               <% end %>
-              <div class="todo-item">
+              <td class="todo-item">
                 <%= i.name %>
-              </div>
+              </td>
+              <td class="todo-time">
+                <%= distance_of_time_in_words_to_now(i.created_at) %>
+              </td>
             <% end %>
           <% end %>
         <% end %>
